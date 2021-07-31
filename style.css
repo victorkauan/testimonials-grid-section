@@ -1,8 +1,173 @@
+/* ========== Variables ========= */
+:root {
+  /* |> Primary */
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+
+  /* |> Neutral */
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  --transparent-white-fifty: hsla(0, 0%, 100%, 0.5);
+}
+
 /* ========== Reset ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* ========== Global ========= */
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  color: var(--white);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 0.8125rem;
+
+  background: var(--light-grayish-blue);
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 0.8125rem;
+}
+
+h4 {
+  font-size: 0.6875rem;
+}
+
+.container {
+  padding: 1.625rem 2.0625rem 2.0625rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.125rem;
+}
+
+/* ========== App ========= */
+#app {
+  display: flex;
+  justify-content: center;
+}
+
+/* ========== Testimonials ========= */
+#testimonials {
+  width: min(87.5vw, 37.5rem);
+  margin: 4.5rem 0;
+
+  display: grid;
+  gap: 1.5rem;
+}
+
+#testimonials h1 {
+  /* Screen readers only */
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  position: absolute;
+  white-space: nowrap;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
+
+/* ========== Sections ========= */
+#testimonials section {
+  border-radius: 0.5rem;
+
+  box-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+#testimonials section cite {
+  font-style: normal;
+
+  display: grid;
+  grid-auto-columns: 2rem auto;
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "image author"
+    "image occupation";
+  align-items: center;
+  gap: 0 0.8125rem;
+}
+
+#testimonials section cite img {
+  grid-area: image;
+
+  height: 2rem;
+  width: 2rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+#testimonials section cite h3 {
+  grid-area: author;
+
+  font-weight: 500;
+}
+
+#testimonials section cite h4 {
+  grid-area: occupation;
+
+  font-weight: 500;
+
+  opacity: 0.5;
+}
+
+#testimonials section p {
+  line-height: 1.125rem;
+
+  opacity: 0.7;
+}
+
+/* ========== Daniel ========= */
+#daniel {
+  background: var(--moderate-violet) url(./images/bg-pattern-quotation.svg)
+    no-repeat 90% 0%;
+}
+
+#daniel cite img {
+  border: 0.125rem solid var(--transparent-white-fifty);
+}
+
+/* ========== Jonathan ========= */
+#jonathan {
+  background: var(--very-dark-grayish-blue);
+}
+
+/* ========== Jeanette ========= */
+#jeanette {
+  color: var(--very-dark-grayish-blue);
+
+  background: var(--white);
+}
+
+/* ========== Patrick ========= */
+#patrick {
+  background: var(--very-dark-blackish-blue);
+}
+
+#patrick cite img {
+  border: 0.125rem solid var(--moderate-violet);
+}
+
+/* ========== Kira ========= */
+#kira {
+  color: var(--very-dark-grayish-blue);
+
+  background: var(--white);
 }
 
 /* ========== Attributions ==========
