@@ -1,4 +1,4 @@
-/* ========== Variables ========= */
+/* ========== Variables ========== */
 :root {
   /* |> Primary */
   --moderate-violet: hsl(263, 55%, 52%);
@@ -19,19 +19,35 @@
   box-sizing: border-box;
 }
 
-/* ========== Global ========= */
-html,
-body,
-#app {
-  min-height: 100%;
-}
-
+/* ========== Global ========== */
 body {
   color: var(--white);
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 0.8125rem;
 
   background: var(--light-grayish-blue);
+}
+
+.container {
+  padding: 1.625rem 2rem 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.125rem;
+}
+
+h1 {
+  /* Screen readers only */
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  position: absolute;
+  white-space: nowrap;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
 }
 
 h2 {
@@ -46,22 +62,15 @@ h4 {
   font-size: 0.6875rem;
 }
 
-.container {
-  padding: 1.625rem 2.0625rem 2.0625rem;
-}
-
-.grid {
-  display: grid;
-  gap: 1.125rem;
-}
-
-/* ========== App ========= */
+/* ========== App ========== */
 #app {
+  min-height: 100vh;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-/* ========== Testimonials ========= */
+/* ========== Testimonials ========== */
 #testimonials {
   width: min(87.5vw, 37.5rem);
   margin: 4.5rem 0;
@@ -70,28 +79,17 @@ h4 {
   gap: 1.5rem;
 }
 
-#testimonials h1 {
-  /* Screen readers only */
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-
-  position: absolute;
-  white-space: nowrap;
-
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-}
-
-/* ========== Sections ========= */
+/* ========== Sections ========== */
 #testimonials section {
   border-radius: 0.5rem;
 
-  box-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.1);
+  box-shadow: 1rem 1rem 1.75rem rgba(0, 0, 0, 0.05);
 }
 
 #testimonials section cite {
   font-style: normal;
+  height: fit-content;
+  width: fit-content;
 
   display: grid;
   grid-auto-columns: 2rem auto;
@@ -132,7 +130,7 @@ h4 {
   opacity: 0.7;
 }
 
-/* ========== Daniel ========= */
+/* ========== Daniel ========== */
 #daniel {
   background: var(--moderate-violet) url(./images/bg-pattern-quotation.svg)
     no-repeat 90% 0%;
@@ -142,19 +140,19 @@ h4 {
   border: 0.125rem solid var(--transparent-white-fifty);
 }
 
-/* ========== Jonathan ========= */
+/* ========== Jonathan ========== */
 #jonathan {
   background: var(--very-dark-grayish-blue);
 }
 
-/* ========== Jeanette ========= */
+/* ========== Jeanette ========== */
 #jeanette {
   color: var(--very-dark-grayish-blue);
 
   background: var(--white);
 }
 
-/* ========== Patrick ========= */
+/* ========== Patrick ========== */
 #patrick {
   background: var(--very-dark-blackish-blue);
 }
@@ -163,11 +161,54 @@ h4 {
   border: 0.125rem solid var(--moderate-violet);
 }
 
-/* ========== Kira ========= */
+/* ========== Kira ========== */
 #kira {
   color: var(--very-dark-grayish-blue);
 
   background: var(--white);
+}
+
+/* ========== Responsive ========== */
+@media (min-width: 1025px) {
+  /* ========== Testimonials ========== */
+  #testimonials {
+    width: min(90vw, 68.75rem);
+    margin: 2.75rem 0;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "daniel daniel jonathan kira"
+      "jeanette patrick patrick kira";
+    gap: 1.5rem 1.625rem;
+  }
+
+  /* ========== Daniel ========== */
+  #daniel {
+    grid-area: daniel;
+
+    background-position: 82.5% 0%;
+  }
+
+  /* ========== Jonathan ========== */
+  #jonathan {
+    grid-area: jonathan;
+  }
+
+  /* ========== Jeanette ========== */
+  #jeanette {
+    grid-area: jeanette;
+  }
+
+  /* ========== Patrick ========== */
+  #patrick {
+    grid-area: patrick;
+  }
+
+  /* ========== Kira ========== */
+  #kira {
+    grid-area: kira;
+  }
 }
 
 /* ========== Attributions ==========
