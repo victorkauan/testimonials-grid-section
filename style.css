@@ -29,7 +29,7 @@ body {
 }
 
 .container {
-  padding: 1.625rem 2rem 2rem;
+  padding: 1.5rem 2rem;
 }
 
 .grid {
@@ -78,7 +78,7 @@ h2 {
   box-shadow: 1rem 1rem 1.75rem rgba(0, 0, 0, 0.05);
 }
 
-#testimonials section cite {
+#testimonials section div {
   font-style: normal;
   height: fit-content;
   width: fit-content;
@@ -93,7 +93,7 @@ h2 {
   gap: 0 0.8125rem;
 }
 
-#testimonials section cite img {
+#testimonials section div img {
   grid-area: image;
 
   height: 2rem;
@@ -102,13 +102,13 @@ h2 {
   border-radius: 50%;
 }
 
-#testimonials section cite p.author {
+#testimonials section div p.author {
   grid-area: author;
 
   font-weight: 500;
 }
 
-#testimonials section cite p.occupation {
+#testimonials section div p.occupation {
   grid-area: occupation;
 
   font-size: 0.6875rem;
@@ -129,7 +129,7 @@ h2 {
     no-repeat 90% 0%;
 }
 
-#daniel cite img {
+#daniel div img {
   border: 0.125rem solid var(--transparent-white-fifty);
 }
 
@@ -150,7 +150,7 @@ h2 {
   background: var(--very-dark-blackish-blue);
 }
 
-#patrick cite img {
+#patrick div img {
   border: 0.125rem solid var(--moderate-violet);
 }
 
